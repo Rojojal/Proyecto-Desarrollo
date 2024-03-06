@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+
+    </head>
+    <title>Registro</title>
+
+    <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+
+        <div class="imagen-form-wrapper">
+
+            <section class="container mt-5">
+                <h1 class="mb-4">[[#{registrar.btnLogin}]]</h1>
+                <form>
+
+                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
+                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
+                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
+                </form>
+
+
+            </section>
+            <div class="contenedor">
+                <img src="https://biozoo.com.mx/lavidaanimal/assets/blog/Poblaciones-con-mayor-nivel-de-riesgo.jpg" class ="imagen" alt="adoptame"/>  
+            </div>
+        </div>
+
+        <footer th:replace="layout/plantilla :: footer"></footer>
+
+    </body>
+</html>
+
