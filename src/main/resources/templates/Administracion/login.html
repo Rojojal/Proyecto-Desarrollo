@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+
+    </head>
+    <title>Registro</title>
+
+    <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+
+        <div class="imagen-form-wrapper">
+
+            <section class="container mt-5">
+                <h1 class="mb-4">[[#{registrar.btnLogin}]]</h1>
+                <form>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">[[#{usuario.correo}]]</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">[[#{usuario.password}]]</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
+                </form>
+
+
+            </section>
+            <div class="contenedor">
+                <img src="https://www.ngenespanol.com/wp-content/uploads/2023/12/descubren-que-los-humanos-influimos-en-el-color-de-ojos-de-los-perros.jpg" class ="imagen" alt="adoptame"/>  
+            </div>
+        </div>
+
+        <footer th:replace="layout/plantilla :: footer"></footer>
+
+    </body>
+</html>
+
