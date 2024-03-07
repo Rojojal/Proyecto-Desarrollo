@@ -37,17 +37,13 @@ public class Registro  implements Serializable {
     this.direccion = direccion;
     this.email = email;
     this.password = password;
-    this.activo = activo; // Asigna el valor del parámetro activo al atributo activo
+    this.activo = activo; 
 }
 
 
-    public boolean isActivo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    //hola
     
-    //comentario
+
+    
     
     
 

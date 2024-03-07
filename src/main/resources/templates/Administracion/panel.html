@@ -4,7 +4,7 @@
     <head th:replace="~{layout/plantilla :: head}">
 
     </head>
-    <title>Registro</title>
+    <title>Panel de administracion</title>
 
     <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
     <body>
@@ -13,7 +13,8 @@
         <div class="imagen-form-wrapper">
 
             <section class="container mt-5">
-                <h1 class="mb-4">[[#{registrar.btnLogin}]]</h1>
+                <h1 class="mb-4">[[#{panel.titulo}]]</h1>
+                <h4 class="mb-4">[[#{panel.actividad}]]</h4>
                 <form>
 
                     <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
