@@ -36,5 +36,7 @@ public class RegistroServiceImpl {
     @Transactional
     public void delete(Registro registro) {
         registroDao.delete(registro);
-    }//holaaa
+    }
 }
+
+//hola

@@ -18,4 +18,9 @@ public interface RegistroService {
 
     public void deleteRegistro(Long idRegistro);
     
-} //holaaa
+} 
+
+
+//holaa
+
+//comentario
