@@ -32,8 +32,27 @@ contenedor {
   max-height: 70%;
   margin-left: auto; 
 }
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color:   rgb(195 162 195) !important;
+}
+.bg-info {
+    --bs-bg-opacity: 1;
+    background-color: rgb(195 162 195) !important;
+}
 
 
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #cf92d3;
+    --bs-btn-border-color: #c89bc9;
+    --bs-btn-hover-bg: #e1a9d9;
+    --bs-btn-hover-border-color: #c39bc7;
 
+}
+.form-check-input:checked {
+    background-color: #be8dbf;
+    border-color: #bc93c3;
+}
 
 
