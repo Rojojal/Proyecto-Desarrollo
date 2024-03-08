@@ -1,0 +1,16 @@
+.fondo{
+    background: url(https://img.freepik.com/foto-gratis/perro-sonriente-adoptar-me-banner_23-2148699702.jpg?w=740&t=st=1709656454~exp=1709657054~hmac=8e4b2bc10ba83efe1276f3bb2ba8cfc51c9a431d64c1b9d47939e1b8bb6d9709);
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    height: 40vh;
+    background-attachment: fixed;
+    
+}
+
+.custom-btn-color {
+    background-color: #461b75;
+    border-color: #461b75;
+    color: white;
+}

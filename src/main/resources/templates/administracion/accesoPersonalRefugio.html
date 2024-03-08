@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout/plantilla :: head}">
-
+        <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/accesoPersonalRefugio.css}" rel="stylesheet" type="text/css"/>
     </head>
-    <title>Panel de administracion</title>
 
-    <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
+    <title>Acceso personal del refugio</title>
+    
     <body>
         <header th:replace="layout/plantilla :: header"></header>
 
@@ -17,11 +18,10 @@
                 <h4 class="mb-4">[[#{panel.actividad}]]</h4>
                 <form>
 
-                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
-                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
-                    <button type="submit" class="btn btn-primary">[[#{registrar.btnLogin}]]</button>
+                    <button type="submit" class="btn custom-btn-color">[[#{registrar.btnLogin}]]</button>
+                    <button type="submit" class="btn custom-btn-color">[[#{registrar.btnLogin}]]</button>
+                    <a href="/mascota/listado" class="btn custom-btn-color">Panel de administración mascotas</a>
                 </form>
-
 
             </section>
             <div class="contenedor">
