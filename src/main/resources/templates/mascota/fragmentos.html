@@ -205,26 +205,26 @@
                                                               name="descripcion" th:field="*{descripcion}"
                                                               required="true"></textarea>
                                                 </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="activo">[[#{mascota.activo}]]</label>
-                                                    <input class="form-check-input" 
-                                                           type="checkbox" 
-                                                           name="activo" 
-                                                           id="activo"
-                                                           th:field="*{activo}">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="imagen">[[#{mascota.rutaImagen}]]</label>
-                                                    <input class="form-control" type="file" name="imagenFile"
-                                                           onchange="readURL(this);" />
-                                                    <img id="blah" th:src="@{${mascota.rutaImagen}}" alt="your image" height="200"/>
-                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="activo">[[#{mascota.activo}]]</label>
+                                                <input class="form-check-input" 
+                                                       type="checkbox" 
+                                                       name="activo" 
+                                                       id="activo"
+                                                       th:field="*{activo}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="imagen">[[#{mascota.rutaImagen}]]</label>
+                                                <input class="form-control" type="file" name="imagenFile"
+                                                       onchange="readURL(this);" />
+                                                <img id="blah" th:src="@{${mascota.rutaImagen}}" alt="your image" height="200"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -253,5 +253,11 @@
                 </div>
             </div>
         </section>
+
+        <div th:fragment="mostrarMapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31010.918150373155!2d-73.98542870383037!3d40.74881790280921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM2JzA5LjIiTiA3M8KwMDgnMDUuNyJX!5e0!3m2!1ses-419!2sve!4v1647564542282!5m2!1ses-419!2sve" 
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </body>
 </html>
