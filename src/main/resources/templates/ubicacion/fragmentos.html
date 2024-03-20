@@ -3,15 +3,22 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
-        <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
-        <link th:href="@{/css/mascota.css}" rel="stylesheet" type="text/css"/>
-        <title>Patitas Felices</title>
-    </head>
-    <body>
-        
 
-        <div th:fragment="mostrarMapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15720.296636803672!2d-84.06959515497739!3d9.927781967053525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3f47ea4ff37%3A0x7a7818a6a9e5c90c!2sUniversidad%20Fid%C3%A9litas!5e0!3m2!1ses-419!2scr!4v1709941277961!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </head>
+    <title>Patitas Felices</title>
+
+    <body>
+        <link th:href="@{/css/ubicacion.css}" rel="stylesheet" type="text/css"/> 
+        <div th:fragment="mostrarMapa" class="Mapa">
+            <section>
+                <br />
+                <br />
+                <p>[[#{ubicacion.titulo}]]</p>
+                <p>[[#{ubicacion.texto}]]</p>
+            </section>
+
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31438.850164928965!2d-84.05884030386794!3d9.94591445049573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3f47ea4ff37%3A0x7a7818a6a9e5c90c!2sUniversidad%20Fid%C3%A9litas!5e0!3m2!1ses-419!2scr!4v1710968927951!5m2!1ses-419!2scr" width="1640" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </body>
 </html>

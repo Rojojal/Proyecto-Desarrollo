@@ -1,0 +1,25 @@
+
+
+.header {
+    background-color: #f5effb !important;
+}
+
+footer {
+    background-color: #d2d2d2 !important;
+}
+
+.Mapa{
+   display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 80%;
+    font-family: serif;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+    margin-left: 185px;
+}
