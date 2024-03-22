@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 50px;
+    padding: 100px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4e5153;
+    margin-bottom: 20px;
+}
+
+.form-control {
+
+    border: 1px solid #dfe1e3;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4e5153;
+    background-color: #f9f9f9;
+    resize: none;
+
+}
+
+.btn-toolbar {
+    margin-top: 20px;
+}
+
+.btn-group {
+    margin-right: 5px;
+}
+.bg-info {
+    --bs-bg-opacity: 1;
+    background-color:  rgb(195 162 195) !important;
+}
+
+.btn {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #cf92d3;
+    --bs-btn-border-color: #c89bc9;
+    --bs-btn-hover-bg: #e1a9d9;
+    --bs-btn-hover-border-color: #c39bc7;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.btn-secondary {
+    border: none;
+    margin-right: 5px;
+    color: #4e5153;
+    background-color: #f9f9f9;
+}
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color:  rgb(195 162 195) !important;
+
+}
+
+.align-action {
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+}

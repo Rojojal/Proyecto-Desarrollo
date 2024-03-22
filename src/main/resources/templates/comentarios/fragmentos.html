@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+
+    </head> 
+    <title>Comentarios</title>
+
+    <link th:href="@{/css/comentarios.css}" rel="stylesheet" type="text/css"/>
+    <body>
+
+        <body>
+            <div th:fragment="comentarios" class="container mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Dejanos tus opiniones!!!</h5>
+                        <div class="form-group">
+                            <textarea id="commentBox" class="form-control" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+                        </div>
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group mr-2" role="group">
+                                <button type="button" class="btn btn-secondary format-action" data-style="bold"><b>B</b></button>
+                                <button type="button" class="btn btn-secondary format-action" data-style="italic"><i>I</i></button>
+                                <button type="button" class="btn btn-secondary format-action" data-style="underline"><u>U</u></button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-secondary align-action" data-align="left">&#8592;</button>
+                                <button type="button" class="btn btn-secondary align-action" data-align="center">&#8593;</button>
+                                <button type="button" class="btn btn-secondary align-action" data-align="right">&#8594;</button>
+                            </div>
+                        </div>
+                        <button id="sendComment" class="btn btn-primary mt-3">Enviar comentario</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </body>
+
+</html>
