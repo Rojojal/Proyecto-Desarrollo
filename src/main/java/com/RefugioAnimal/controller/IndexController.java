@@ -25,4 +25,10 @@ public class IndexController {
         return "/administracion/accesoPersonalRefugio";
     }
     
+        @RequestMapping("/visitar")
+    public String visitar(Model model) {
+        model.addAttribute("attribute", "value");
+        return "/visitar/visitar";
+    }
+    
 }
