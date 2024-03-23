@@ -19,6 +19,12 @@ public class VisitaController {
     
     @Autowired
     VisitaService visitaService;
+    
+    @RequestMapping("/visitar")
+    public String visita(Model model) {
+        model.addAttribute("attribute", "value");
+        return "/visita/visitar";
+    }
             
     @GetMapping("/listado")
     public String listado(Model model) {
