@@ -22,7 +22,7 @@ public class IndexController {
     @RequestMapping("/login")
     public String login(Model model) {
         model.addAttribute("attribute", "value");
-        return "/Administracion/panel";
+        return "/administracion/accesoPersonalRefugio";
     }
     
 }

@@ -1,0 +1,75 @@
+.contenedor1{
+    background-color: #F5EFFB;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+   min-height: 90vh;
+    justify-content: center;
+}
+
+.seccion1 {
+  min-width: 50%;
+  background-color: #DFCCF3;
+  min-height: 824px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccion1 {
+  width: 100%
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 50%;
+}
+
+.info {
+  flex: 1;
+  text-align: center;
+}
+
+.info-container > *{
+    min-width: 33.33%;
+    min-height: 412px;
+    padding: .8em 1em;
+}
+
+.info-container section:nth-child(1), .info-container section:nth-child(3), .info-container section:nth-child(5), .info-container section:nth-child(7){
+  background-color: #F5EFFB;
+}
+
+.info-container section:nth-child(2), .info-container section:nth-child(4), .info-container section:nth-child(6){
+  background-color: #DFCCF3;
+}
+
+
+.rounded-corner {
+    margin: 20px;
+    border-radius: 50px;
+}
+
+.tituloConctacto{
+    font-size: 35px;
+    
+    text-align: center;
+    
+}
+
+
+.header {
+    background-color: #f5effb !important;
+}
+
+footer {
+    background-color: #d2d2d2 !important;
+}
+
+

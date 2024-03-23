@@ -34,7 +34,7 @@ contenedor {
 }
 .bg-dark {
     --bs-bg-opacity: 1;
-    background-color:   rgb(195 162 195) !important;
+    
 }
 .bg-info {
     --bs-bg-opacity: 1;
