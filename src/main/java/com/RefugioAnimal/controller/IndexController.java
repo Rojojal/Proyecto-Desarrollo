@@ -19,12 +19,16 @@ public class IndexController {
         return "/registro/plantillaRegistro";
     }
     
-    @RequestMapping("/login")
-    public String login(Model model) {
+    @RequestMapping("/panel")
+    public String panel(Model model) {
         model.addAttribute("attribute", "value");
         return "/administracion/accesoPersonalRefugio";
     }
     
-    
+    @RequestMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("attribute", "value");
+        return "/administracion/login";
+    }
     
 }
