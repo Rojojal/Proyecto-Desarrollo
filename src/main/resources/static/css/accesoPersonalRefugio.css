@@ -1,16 +1,45 @@
 .fondo{
-    background: url(https://img.freepik.com/foto-gratis/perro-sonriente-adoptar-me-banner_23-2148699702.jpg?w=740&t=st=1709656454~exp=1709657054~hmac=8e4b2bc10ba83efe1276f3bb2ba8cfc51c9a431d64c1b9d47939e1b8bb6d9709);
+    padding: 100px;
+    height: 100%;
+    
+}
+
+.mb-4{
+    color: white;
+    text-align: center;
+    margin-bottom: 50px !important;
+}
+
+#b {
+    background: url("https://biozoo.com.mx/lavidaanimal/assets/blog/Poblaciones-con-mayor-nivel-de-riesgo.jpg");
     min-width: 100%;
     background-repeat: no-repeat;
     background-position: top left;
     background-size: cover;
-    height: 40vh;
-    background-attachment: fixed;
+    height: 100vh;
     
+    background-attachment: fixed;
 }
-
 .custom-btn-color {
     background-color: #461b75;
     border-color: #461b75;
     color: white;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    font-size: 1.1rem;
+}
+
+
+.botonesPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.custom-btn-color:hover{
+    background: #702DB9;
+    color: white;
+    
 }

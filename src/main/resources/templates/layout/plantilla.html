@@ -8,7 +8,8 @@
         <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/css/ubicacion.css}" rel="stylesheet" type="text/css"/> 
         <link th:href="@{/css/contacto.css}" rel="stylesheet" type="text/css"/> 
-        <link th:href="@{/css/sobreNosotros.css}" rel="stylesheet" type="text/css"/> 
+        <link th:href="@{/css/sobreNosotros.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/accesoPersonalRefugio.css}" rel="stylesheet" type="text/css"/>
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
@@ -29,7 +30,7 @@
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/ubicacion}">[[#{plantilla.ubicacion}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/sobreNosotros}">[[#{plantilla.nosotros}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/comentarios}">[[#{plantilla.comentarios}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/visitar}">[[#{plantilla.visitar}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/visita/visitar}">[[#{plantilla.visitar}]]</a></li>
                         </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
@@ -58,7 +59,7 @@
             </section>
         </header>
 
-        <footer th:fragment="footer" class="bg-info text-white mt-5 p-2" style="background-color: #d2d2d2;">
+        <footer th:fragment="footer" class="bg-info text-white p-2" style="background-color: #d2d2d2;">
             <div class="container">
                 <div class="col">
                     <p class="lead text-center">

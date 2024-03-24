@@ -2,33 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout/plantilla :: head}">
-        <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css"/>
-        <link th:href="@{/css/accesoPersonalRefugio.css}" rel="stylesheet" type="text/css"/>
-    </head>
 
+
+    </head>
+    <link th:href="@{/css/accesoPersonalRefugio.css}" rel="stylesheet" type="text/css"/>
     <title>Acceso personal del refugio</title>
-    
+
     <body>
         <header th:replace="layout/plantilla :: header"></header>
 
-        <div class="imagen-form-wrapper">
+        <div id="b" class="fondo">
+            
 
-            <section class="container mt-5">
-                <h1 class="mb-4">[[#{panel.titulo}]]</h1>
-                <h4 class="mb-4">[[#{panel.actividad}]]</h4>
-                <form>
 
-                    <button type="submit" class="btn custom-btn-color">[[#{registrar.btnLogin}]]</button>
-                    <button type="submit" class="btn custom-btn-color">[[#{registrar.btnLogin}]]</button>
-                    <a href="/mascota/listado" class="btn custom-btn-color">Panel de administración mascotas</a>
-                </form>
+            <div class="imagen-form-wrapper">
 
-            </section>
-            <div class="contenedor">
-                <img src="https://biozoo.com.mx/lavidaanimal/assets/blog/Poblaciones-con-mayor-nivel-de-riesgo.jpg" class ="imagen" alt="adoptame"/>  
+                <section class="container mt-5">
+                    <h1 class="mb-4">[[#{panel.titulo}]]</h1>
+                    <h4 class="mb-4">[[#{panel.actividad}]]</h4>
+                    <form class="botonesPanel">
+                        <button type="submit" class="btn custom-btn-color">[[#{panel.primerTexto}]]</button>
+                        <button type="submit" class="btn custom-btn-color">[[#{panel.segundoTexto}]]</button>
+                        <a href="/mascota/listado" class="btn custom-btn-color">[[#{panel.tercerTexto}]]</a>
+                    </form>
+                </section>
             </div>
         </div>
-
         <footer th:replace="layout/plantilla :: footer"></footer>
 
     </body>
