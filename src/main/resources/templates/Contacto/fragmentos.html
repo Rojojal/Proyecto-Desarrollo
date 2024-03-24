@@ -7,24 +7,24 @@
     <body>
 
         <section th:fragment="contendor">
-            <h1 class="tituloConctacto">Contacto</h1>
+            <h1 class="tituloConctacto">[[#{contacto.titulo}]]</h1>
             <div class="contenedor1">
 
                 <section class="sec1">
-                    <strong><h3>Horario</strong> </h3>
-                    <p>Lunes a Sabados de 10 a.m a 4 p.m</p>
-                    <p>Domingos cerrados.</p> 
+                    <strong><h3>[[#{contacto.horario}]]</strong> </h3>
+                    <p>[[#{contacto.horario1}]]</p>
+                    <p>[[#{contacto.horario1.2}]]</p> 
 
-                    <strong<h3>Telefono</h3></strong> 
+                    <strong<h3>[[#{contacto.telefonoTitulo}]]</h3></strong> 
                     <p>+506 2222 2222</p> 
 
-                    <strong<h3>Correo Electronico</h3></strong> 
+                    <strong<h3>[[#{contacto.correo}]]</h3></strong> 
                     <p>patitasfelices@gmail.com</p> 
 
-                    <strong<h3>Redes Sociales</h3></strong> 
+                    <strong<h3>[[#{contacto.redes}]]</h3></strong> 
 
-                    <p style="font-size: 20px;">Deseas que nosotros te contactemos?</p>
-                    <p>¡Llena un formuario de contacto!</p> 
+                    <p style="font-size: 20px;">[[#{contacto.ayuda}]]</p>
+                    <p>[[#{contacto.formulario}]]</p> 
 
                 </section>
 
