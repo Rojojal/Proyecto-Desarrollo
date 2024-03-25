@@ -8,12 +8,16 @@
         <title>Patitas Felices</title>
     </head>
     <body>
+        <section th:fragment="panel">
+            <h1 style="text-align: center; margin-top: 30px;">Panel de administración</h1>
+            <p style="text-align: center">Seleccione un perro o gato de la lista, o agregue una nueva mascota:</p>
+        </section>
         <!-- 1 Sección para crear el botón de agregar... llamará a una ventana modal-->
         <section th:fragment="botonesAgregar" class="py-4 mb-4">
             <div class="container">
                 <div class="row">
-                    <h1 style="text-align: center; margin-top: 30px;">Panel de administración</h1>
-                    <p style="text-align: center">Seleccione un perro o gato de la lista, o agregue una nueva mascota:</p>
+<!--                    <h1 style="text-align: center; margin-top: 30px;">Panel de administración</h1>
+                    <p style="text-align: center">Seleccione un perro o gato de la lista, o agregue una nueva mascota:</p>-->
                     <div class="col-md-3"> 
                         <button 
                             type="button" 
