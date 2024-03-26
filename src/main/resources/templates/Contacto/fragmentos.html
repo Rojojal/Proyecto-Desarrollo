@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="layout/plantilla :: head">
-        <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
+<head th:replace="layout/plantilla :: head">
+    <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 
-        <section th:fragment="contendor">
-            <h1 class="tituloConctacto">[[#{contacto.titulo}]]</h1>
-            <div class="contenedor1">
+<section th:fragment="contendor">
+    <h1 class="tituloConctacto">[[#{contacto.titulo}]]</h1>
+    <div class="contenedor1">
 
-                <section class="sec1">
-                    <strong><h3>[[#{contacto.horario}]]</strong> </h3>
-                    <p>[[#{contacto.horario1}]]</p>
-                    <p>[[#{contacto.horario1.2}]]</p> 
+        <section class="sec1">
+            <strong><h3>[[#{contacto.horario}]]</h3></strong>
+            <p>[[#{contacto.horario1}]]</p>
+            <p>[[#{contacto.horario1.2}]]</p>
 
-                    <strong<h3>[[#{contacto.telefonoTitulo}]]</h3></strong> 
-                    <p>+506 2222 2222</p> 
+            <strong><h3>[[#{contacto.telefonoTitulo}]]</h3></strong>
+            <p>+506 2222 2222</p>
 
-                    <strong<h3>[[#{contacto.correo}]]</h3></strong> 
-                    <p>patitasfelices@gmail.com</p> 
+            <strong><h3>[[#{contacto.correo}]]</h3></strong>
+            <p>patitasfelices@gmail.com</p>
 
-                    <strong<h3>[[#{contacto.redes}]]</h3></strong> 
+            <strong><h3>[[#{contacto.redes}]]</h3></strong>
 
-                    <p style="font-size: 20px;">[[#{contacto.ayuda}]]</p>
-                    <p>[[#{contacto.formulario}]]</p> 
+            <p style="font-size: 20px;">[[#{contacto.ayuda}]]</p>
+            <p>[[#{contacto.formulario}]]</p>
 
-                </section>
-
-                <section class="sec2">
-                    <img class="rounded-corner" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsZzqkdgFw-T3PYcxmkaecrAlTPy1kiJ7bkuIgHv-kKUp1_rIEOGZwtN1T6tLxQohrkVd7Pa0Kl8bcUDtjeUYIqUcbiIsXZfOfgRB8Oh7B4N3DZHy94-d8zumVDjua1qQ1Kv165ZJywJs7/s640/Kedilerde+Alerji+Problemleri++ve+Alerjik+Hastal%25C4%25B1klar.jpg" alt="gato" style="height: 500px"/>
-                </section>
-            </div>
         </section>
 
+        <section class="sec2">
+            <img class="rounded-corner"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsZzqkdgFw-T3PYcxmkaecrAlTPy1kiJ7bkuIgHv-kKUp1_rIEOGZwtN1T6tLxQohrkVd7Pa0Kl8bcUDtjeUYIqUcbiIsXZfOfgRB8Oh7B4N3DZHy94-d8zumVDjua1qQ1Kv165ZJywJs7/s640/Kedilerde+Alerji+Problemleri++ve+Alerjik+Hastal%25C4%25B1klar.jpg"
+                 alt="gato" style="height: 500px"/>
+        </section>
+    </div>
+</section>
 
+<section th:fragment="formularioContacto" id="contacto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form action="#" method="post" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu nombre.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tus apellidos.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un correo electrónico válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Número de Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un número de teléfono válido.
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </body>
+</body>
 </html>
