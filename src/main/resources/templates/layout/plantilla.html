@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:fragment="head">
         <title>Patitas Felices</title>
         <meta charset="UTF-8" />
@@ -48,10 +49,13 @@
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" th:href="@{/login}">[[#{index.login}]]</a></li>
                                 <li><a class="dropdown-item" th:href="@{/registro}">[[#{index.registrarse}]]</a></li>
-                                <li><a class="dropdown-item" th:href="@{/panel}">[[#{index.acceso}]]</a></li>
+                                <li><a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_PERSONAL')"> th:href="@{/panel}">[[#{index.acceso}]]</a></li>
                             </ul>
                         </li>
-                    </ul>                        
+                    </ul>  
+                    <div>
+                       
+                    </div>
                 </div>
                 </div>
             </nav>
