@@ -1,4 +1,4 @@
-.contenedor1{
+.contenedorPrincipal{
     background-color: #dfccf3;
     font-family: sans-serif;
     font-size: 20px;
@@ -14,13 +14,13 @@
     color: white;
 }
 
-.sec1{
+.sec1index{
     flex: 1; 
     padding: 50px; 
     text-align: center;
 }
 
-.sec2{
+.sec2index{
     flex: 1;  
     text-align: center;
 }
@@ -29,7 +29,7 @@
     border-radius: 50px;
 }
 
-.contenedor2{
+.contenedorPrincipal2{
     background-color: white;
     font-family: serif;
     font-size: 30px;
