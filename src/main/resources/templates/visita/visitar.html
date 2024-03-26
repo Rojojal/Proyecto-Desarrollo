@@ -7,19 +7,29 @@
     <body>
         <header th:replace="layout/plantilla :: header"></header>
 
-        <div class="contenedor1" style="padding-left: 40px; padding-top: 20px; padding-bottom: 20px">
+        <div class style="padding-left: 130px; padding-top: 20px; padding-bottom: 20px; background-color: #dfccf3; color: #461b75;">
             <h1>¡Visítanos!</h1>
         </div>
 
         <div class="text-center mb-3">
-            <p style="font-family: sans-serif; color: black; font-size: 28px; padding-top: 20px; padding-bottom: 20px">Mira nuestra casa</p>
+            <p style="font-family: sans-serif; color: black; font-size: 30px; padding-top: 30px">Mira nuestra casa</p>
         </div>
 
-        <div class>
-            <p>¡Ven y únete a nosotros en nuestro refugio de amor y esperanza para animales necesitados! En nuestro refugio, cada visita se convierte en una oportunidad para cambiar vidas, tanto para los animales que esperan un hogar como para aquellos que buscan la alegría y la compañía de una mascota.</p>
-            <!--            <a href="/visita/listado" class="btn custom-btn-color">¡Visítanos!</a>-->
-            <a href="/visita/listado" class="btn custom-btn-color">¡Visítanos!</a>
-        </div>        
+        <div class="contenedorPrincipal2" style="font-family: sans-serif; padding-left: 100px; padding-right: 100px;">
+            <section class="sec1index" style=" padding: 0px;">
+                <img class="rounded-corner" src="https://images.pexels.com/photos/12646769/pexels-photo-12646769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gatos">
+            </section>
+            <section class="sec1index" style=" padding: 0px;">
+                <img class="rounded-corner" src="https://people.com/thmb/l1lU6RnuWk-w4F8OJc43swwY_mk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2):format(webp)/luvable-animal-rescue-6-4b8a68f86bad458fb9a7357e14ba5ba7.jpg" alt="Perros" style="height: 350px;">
+                <img class="rounded-corner" src="https://images.pexels.com/photos/16465603/pexels-photo-16465603/free-photo-of-dogs-in-shelter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 3" style="height: 350px">
+            </section>
+            <section class="sec1index" style=" padding: 0px;">
+                <section class="rounded-corner" style="background-color: #ebecf1; padding: 30px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 50px">
+                    <p style="font-size: 25px; padding: 50px">¡Ven y únete a nosotros en nuestro refugio de amor y esperanza para animales necesitados! En nuestro refugio, cada visita se convierte en una oportunidad para cambiar vidas, tanto para los animales que esperan un hogar como para aquellos que buscan la alegría y la compañía de una mascota.</p>
+                </section>
+                <a href="/visita/listado" class="btn custom-btn-color" style="font-size: 25px;">¡Visítanos!</a>
+            </section>
+        </div>
 
         <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
