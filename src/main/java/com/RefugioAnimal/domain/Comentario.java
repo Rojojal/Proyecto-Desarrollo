@@ -7,7 +7,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 @Entity
-@Table(name = "comentario")
+@Table(name = "comentarios")
 public class Comentario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -16,19 +16,16 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_comentario")
     private Long idComentario;
-    private int usuario_id;
+    private int  idUsuario;
     private String contenido;
     private Timestamp fecha_creacion;
 
     public Comentario() {
     }
 
-    public Comentario(int usuario_id, String contenido, Timestamp fecha_creacion) {
-        this.usuario_id = usuario_id;
+    public Comentario(int idUsuario, String contenido, Timestamp fecha_creacion) {
+        this.idUsuario = idUsuario;
         this.contenido = contenido;
         this.fecha_creacion = fecha_creacion;
     }
-
-    
-
 }
