@@ -12,7 +12,7 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header bg-success"><h2>[[#{login.login}]]</h2></div>
+                        <div class="card-header bg-success colorBoton"><h2>[[#{login.login}]]</h2></div>
                         <div class="card-body">
                             <form method="POST" th:action="@{/login}">
                                 <div class="form-group row my-3">
@@ -28,22 +28,23 @@
                                 </div>
                                 <div class="card-footer col text-center">
                                     <button class="btn btn-primary" >
-                                        <a th:href="@{/registro/nuevo}" class="btn"><i class="fas fa-user-plus"></i> [[#{accion.registrar}]]</a>
+                                        <a th:href="@{/registro}" class="btn"><i class="fas fa-user-plus"></i> [[#{accion.registrar}]]</a>
                                     </button>
                                     <button class="btn btn-info" >                                        
                                         <a th:href="@{/registro/recordar}" class="btn"><i class="fas fa-envelope"></i> [[#{accion.recordar}]]</a>
                                     </button>
-                                    <button class="btn btn-success" type="submit">
+                                    <button class="btn btn-success colorBoton" type="submit">
                                         <span class="btn"><i class="fas fa-sign-in-alt"></i>
                                             [[#{login.login}]]</span>
                                     </button>
+                                    
                                 </div>
                             </form>                            
                         </div>
-                        <div class="contenedorLogin">
-                            <img src="https://www.ngenespanol.com/wp-content/uploads/2023/12/descubren-que-los-humanos-influimos-en-el-color-de-ojos-de-los-perros.jpg" class ="imagen" alt="adoptame"/>  
-                        </div>
                     </div>
+                    <div class="contenedorLogin">
+                            <img src="https://www.ngenespanol.com/wp-content/uploads/2023/12/descubren-que-los-humanos-influimos-en-el-color-de-ojos-de-los-perros.jpg" class ="imagen" alt="adoptame" style="width: 50px; height: auto;"/>  
+                        </div>
                     <div th:if="${param.error != null}">
                         <h3>[[#{error.login}]]</h3>
                     </div>

@@ -71,12 +71,33 @@ ul{
     transform: scaleX(1);
 }
 
+.logoHeader{
+    transition: 0.35s ease;
+    width: 50%;
+    
+    
+}
 
+.logoHeader:hover{
+    opacity: 0.5s;
+}
 
 .colorLetras{
     color: black !important;
     
 }
-.color{
+.colorBoton{
     background-color: #F5EFFB  !important;
+   
+}
+
+.ir-arriba{
+  display: flex;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  z-index: 2;
 }

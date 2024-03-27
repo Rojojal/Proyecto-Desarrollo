@@ -11,6 +11,7 @@
         <link th:href="@{/css/contacto.css}" rel="stylesheet" type="text/css"/> 
         <link th:href="@{/css/sobreNosotros.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/css/accesoPersonalRefugio.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
@@ -20,58 +21,59 @@
         <header th:fragment="header" class="header">
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
                 <div class="container">
-                    <a th:href="@{/}" class="navbar-brand ">[[#{aplicacion.titulo}]]</a>
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <ul class="navbar-nav">
-                            <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/adoptar/listado}">[[#{plantilla.adoptar}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/contacto}">[[#{plantilla.contacto}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link linkHeader " th:href="@{/ubicacion}">[[#{plantilla.ubicacion}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/sobreNosotros}">[[#{plantilla.nosotros}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/comentarios}">[[#{plantilla.comentarios}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/visita/visitar}">[[#{plantilla.visitar}]]</a></li>
-                        </ul>
+                    <img class="logoHeader" src="https://firebasestorage.googleapis.com/v0/b/techshop-c96b7.appspot.com/o/paw-heart.png?alt=media&token=ec8fde01-c6f4-4b67-b827-93d62b940188" alt="" style="width: 50px; height: auto;">
+                        <a th:href="@{/}" class="navbar-brand ">[[#{aplicacion.titulo}]]</a>
+                        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/adoptar/listado}">[[#{plantilla.adoptar}]]</a></li>
+                                <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/contacto}">[[#{plantilla.contacto}]]</a></li>
+                                <li class="nav-item px-2"><a class="nav-link linkHeader " th:href="@{/ubicacion}">[[#{plantilla.ubicacion}]]</a></li>
+                                <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/sobreNosotros}">[[#{plantilla.nosotros}]]</a></li>
+                                <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/comentarios}">[[#{plantilla.comentarios}]]</a></li>
+                                <li class="nav-item px-2"><a class="nav-link linkHeader" th:href="@{/visita/visitar}">[[#{plantilla.visitar}]]</a></li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ENG</a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
+                                        <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                                    </ul>
+                                </li>
+                            </ul>                        
+                        </div>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ENG</a>
+                                <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Perfil</a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
-                                    <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/login}">[[#{index.login}]]</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/registro}">[[#{index.registrarse}]]</a></li>
+                                    <li><a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_PERSONAL')" th:href="@{/panel}">[[#{index.acceso}]]</a></li>
+
+                                    <ul class="navbar-nav" sec:authorize="isAuthenticated()">
+                                        <li class="dropdown-item">
+                                            <!--  <img th:src="@{${session.usuarioImagen}}" alt="your image" height="40" class="rounded-circle"/> //-->
+                                            <span sec:authentication='name'>Santi</span>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <form method="post" th:action="@{/logout}">
+                                                <button class="btn btn-dark">
+                                                    <i class="dropdown-item">Logut</i>
+                                                </button>
+                                            </form>
+                                        </li>                            
+                                    </ul>
                                 </ul>
+
+
                             </li>
-                        </ul>                        
-                    </div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Perfil</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" th:href="@{/login}">[[#{index.login}]]</a></li>
-                                <li><a class="dropdown-item" th:href="@{/registro}">[[#{index.registrarse}]]</a></li>
-                                <li><a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_PERSONAL')" th:href="@{/panel}">[[#{index.acceso}]]</a></li>
+                        </ul>  
+                        <div>
 
-                                <ul class="navbar-nav" sec:authorize="isAuthenticated()">
-                                    <li class="dropdown-item">
-                                        <!--  <img th:src="@{${session.usuarioImagen}}" alt="your image" height="40" class="rounded-circle"/> //-->
-                                        <span sec:authentication='name'>Santi</span>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <form method="post" th:action="@{/logout}">
-                                            <button class="btn btn-dark">
-                                                <i class="dropdown-item">Logut</i>
-                                            </button>
-                                        </form>
-                                    </li>                            
-                                </ul>
-                            </ul>
-
-
-                        </li>
-                    </ul>  
-                    <div>
-
-                    </div>
+                        </div>
                 </div>
                 </div>
             </nav>
@@ -83,8 +85,11 @@
         <footer th:fragment="footer" class="bg-info text-white p-2 color" style="background-color: #d2d2d2;">
             <div class="container">
                 <div class="col">
+
                     <p class="lead text-center colorLetras">
-                        &COPY [[#{plantilla.derechos}]]
+                        <img class="logoHeader" src="https://firebasestorage.googleapis.com/v0/b/techshop-c96b7.appspot.com/o/paw-heart.png?alt=media&token=ec8fde01-c6f4-4b67-b827-93d62b940188" alt="" style="width: 50px; height: auto;">
+                            [[#{aplicacion.titulo}]]
+                            &COPY [[#{plantilla.derechos}]]
                     </p>
                 </div>
             </div>
