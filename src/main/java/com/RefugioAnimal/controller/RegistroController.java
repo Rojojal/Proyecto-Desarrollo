@@ -1,10 +1,10 @@
 package com.RefugioAnimal.controller;
 
-import com.RefugioAnimal.domain.Registro;
+import com.RefugioAnimal.domain.Usuario;
 import com.RefugioAnimal.service.RegistroService;
-import com.RefugioAnimal.service.impl.FirebaseStorageServiceImpl;
-import java.util.List;
-
+import jakarta.mail.MessagingException;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,38 +14,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
+
 @Controller
+@Slf4j
 @RequestMapping("/registro")
 public class RegistroController {
-
-    RegistroService registroService;
-
-    @GetMapping("/listado")
-    public String listado(Model model) {
-        List<Registro> lista = registroService.getRegistros(false);
-        model.addAttribute("registro", lista);
-        model.addAttribute("totalRegistros", lista.size());
-        return "/registro/listado";
-    }
+@Autowired
+    private RegistroService registroService;
 
     @GetMapping("/nuevo")
-    public String registroNuevo(Registro registro) {
-        return "/registro/modifica";
+    public String nuevo(Model model, Usuario usuario) {
+        return "/registro/nuevo";
     }
 
-    private FirebaseStorageServiceImpl firebaseStorageService;
-
-    @GetMapping("/eliminar/{idRegistro}")
-    public String registroEliminar(Registro registro) {
-        registroService.delete(registro);
-        return "redirect:/registro/listado";
+    @GetMapping("/recordar")
+    public String recordar(Model model, Usuario usuario) {
+        return "/registro/recordar";
     }
 
-    @GetMapping("/modificar/{idRegistro}")
-    public String registroModificar(Registro registro, Model model) {
-        registro = registroService.getRegistro(registro);
-        model.addAttribute("registro", registro);
-        return "/registro/modifica";
+    @PostMapping("/crearUsuario")
+    public String crearUsuario(Model model, Usuario usuario) 
+            throws MessagingException {
+        model = registroService.crearUsuario(model, usuario);
+        return "/registro/salida";
     }
 
+    @GetMapping("/activacion/{usuario}/{id}")
+    public String activar(
+            Model model, 
+            @PathVariable(value = "usuario") String usuario, 
+            @PathVariable(value = "id") String id) {
+        model = registroService.activar(model, usuario, id);
+        if (model.containsAttribute("usuario")) {
+            return "/registro/activa";
+        } else {
+            return "/registro/salida";
+        }
+    }
+
+    @PostMapping("/activar")
+    public String activar(
+            Usuario usuario, 
+            @RequestParam("imagenFile") MultipartFile imagenFile) {
+        registroService.activar(usuario, imagenFile);
+        return "redirect:/";
+    }
+
+    @PostMapping("/recordarUsuario")
+    public String recordarUsuario(Model model, Usuario usuario) 
+            throws MessagingException {
+        model = registroService.recordarUsuario(model, usuario);
+        return "/registro/salida";
+    }
 }

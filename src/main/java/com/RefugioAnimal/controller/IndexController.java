@@ -16,7 +16,7 @@ public class IndexController {
     @RequestMapping("/registro")
     public String registro(Model model) {
         model.addAttribute("attribute", "value");
-        return "/registro/plantillaRegistro";
+        return "/registro/fragmentos";
     }
     
     @RequestMapping("/panel")

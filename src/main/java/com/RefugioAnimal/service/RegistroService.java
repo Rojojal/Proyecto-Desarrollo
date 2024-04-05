@@ -1,26 +1,20 @@
 
 package com.RefugioAnimal.service;
 
-import com.RefugioAnimal.domain.Registro;
-import java.util.List;
 
+
+import com.RefugioAnimal.domain.Usuario;
+import jakarta.mail.MessagingException;
+import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface RegistroService {
-    public List<Registro> getRegistros(boolean activos);
+
+    public Model activar(Model model, String usuario, String clave);
+
+    public Model crearUsuario(Model model, Usuario usuario) throws MessagingException;
     
-    public Registro getRegistro(Registro registro);
+    public void activar(Usuario usuario, MultipartFile imagenFile);
     
-    public void save(Registro registro);
-    
-    public void delete(Registro registro);
-
-    public void saveRegistro(Registro registro);
-
-    public void deleteRegistro(Long idRegistro);
-    
-} 
-
-
-//holaa
-
-//comentario
+    public Model recordarUsuario(Model model, Usuario usuario) throws MessagingException;
+}
