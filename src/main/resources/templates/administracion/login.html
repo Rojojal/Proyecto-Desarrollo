@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://wwww.thymeleaf.org">
     <head th:replace="~{layout/plantilla :: head}">
@@ -37,17 +37,19 @@
                                         <span class="btn"><i class="fas fa-sign-in-alt"></i>
                                             [[#{login.login}]]</span>
                                     </button>
-                                    
+
                                 </div>
-                            </form>                            
+                            </form>   
+                            <div th:if="${param.error != null}">
+                                <h3>[[#{error.login}]]</h3>
+                            </div>
                         </div>
                     </div>
+
                     <div class="contenedorLogin">
-                            <img src="https://www.ngenespanol.com/wp-content/uploads/2023/12/descubren-que-los-humanos-influimos-en-el-color-de-ojos-de-los-perros.jpg" class ="imagen" alt="adoptame"/>  
-                        </div>
-                    <div th:if="${param.error != null}">
-                        <h3>[[#{error.login}]]</h3>
+                        <img src="https://www.ngenespanol.com/wp-content/uploads/2023/12/descubren-que-los-humanos-influimos-en-el-color-de-ojos-de-los-perros.jpg" class ="imagen" alt="adoptame"/>  
                     </div>
+
                 </div>
             </div>           
         </div>
