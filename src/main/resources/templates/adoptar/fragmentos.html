@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="~{layout/plantilla :: head}">
+        <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
+        <title>Patitas Felices</title>
+    </head>
+    <body>
+        <section th:fragment="listadoMascotas" id="mascotas">
+            <div class style="padding-left: 130px; padding-top: 20px; padding-bottom: 20px; background-color: #dfccf3; color: #461b75;">
+                <h1>Adoptar</h1>
+            </div>
+
+            <div class="container">
+                <div class="row row-cols-2" >
+                    <div id="resultsBlock"></div></div>
+                <div class="row row-cols-3" 
+                     th:if="${mascotas != null and !mascotas.empty}">
+                    <div class="card" th:each="mascota : ${mascotas}">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size: 30px;">[[${mascota.nombre}]]</h5>
+                            <figure>
+                                <img th:src="@{${mascota.rutaImagen}}" height="400"/>
+                                <figcaption>[[#{mascota.genero}]]: [[${mascota.genero}]]</figcaption>
+                                <figcaption>[[#{mascota.raza}]]: [[${mascota.raza}]]</figcaption>
+                                <figcaption>[[#{mascota.edad}]]: [[${mascota.edad}]]</figcaption>
+                            </figure>
+                            <form>
+                                <input type="hidden" name="texto" th:value="${mascota.idMascota}"/>
+                                <button type="button" 
+                                        class="btn custom-btn-color">
+                                    <i class="fas fa-paw"> </i>[[#{mascota.adoptar}]]
+                                </button>
+                            </form>
+                            <p class="card-text">[[${mascota.descripcion}]]</p>                            
+                        </div>
+                    </div>
+                </div>
+<!--                <div th:if="${productos == null or productos.empty}">
+                    [[#{carrito.no_mostrar}]]</div>-->
+            </div>
+        </section>
+
+    </body>
+</html>
