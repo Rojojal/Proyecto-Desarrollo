@@ -13,11 +13,11 @@ public class IndexController {
         return "index";
     }
     
-    @RequestMapping("/registro")
-    public String registro(Model model) {
-        model.addAttribute("attribute", "value");
-        return "/registro/fragmentos";
-    }
+    //@RequestMapping("/registro")
+    //public String registro(Model model) {
+      //  model.addAttribute("attribute", "value");
+        //return "/registro/fragmentos";
+    //}
     
     @RequestMapping("/panel")
     public String panel(Model model) {

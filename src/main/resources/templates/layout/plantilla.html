@@ -50,7 +50,7 @@
                                 <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Perfil</a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item" th:href="@{/login}">[[#{index.login}]]</a></li>
-                                    <li><a class="dropdown-item" th:href="@{/registro}">[[#{index.registrarse}]]</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/registro/nuevo}">[[#{index.registrarse}]]</a></li>
                                     <li><a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_PERSONAL')" th:href="@{/panel}">[[#{index.acceso}]]</a></li>
 
                                     <ul class="navbar-nav" sec:authorize="isAuthenticated()">
