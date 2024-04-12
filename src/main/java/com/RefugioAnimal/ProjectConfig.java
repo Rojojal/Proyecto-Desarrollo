@@ -18,8 +18,8 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class ProjectConfig implements WebMvcConfigurer{
-    
+public class ProjectConfig implements WebMvcConfigurer {
+
     @Bean
     public LocaleResolver localeResolver() {
         var slr = new SessionLocaleResolver();
@@ -29,7 +29,7 @@ public class ProjectConfig implements WebMvcConfigurer{
 
         return slr;
     }
-    
+
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         var lci = new LocaleChangeInterceptor();
@@ -44,14 +44,12 @@ public class ProjectConfig implements WebMvcConfigurer{
 
     @Bean("messageSource")
     public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource= new ResourceBundleMessageSource();
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames("messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-    
-    
-    
+
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -66,7 +64,7 @@ public class ProjectConfig implements WebMvcConfigurer{
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**",
                         "/sobreNosotros/**", "/visita/**", "/comentarios/**", "/contacto/**", "/ubicacion/**",
-                        "/registro/**", "/js/**", "/webjars/**", "/error**", "/css/**","/adoptar/**")
+                        "/registro/**", "/js/**", "/webjars/**", "/error**", "/css/**", "/adoptar/**")
                 .permitAll()
                 .requestMatchers(
                         "/administracion/accesoPersonalRefugio/**", "/mascota/fragmentos/**",
@@ -75,7 +73,7 @@ public class ProjectConfig implements WebMvcConfigurer{
                         "/categoria/modificar/**", "/categoria/eliminar/**",
                         "/usuario/nuevo", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
-                        "/reportes/**"
+                        "/reportes/**", "/adoptar/**"
                 ).hasRole("ADMIN")
                 .requestMatchers(
                         "/producto/listado",

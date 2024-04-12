@@ -14,7 +14,7 @@ public class AdoptarController {
     MascotaService mascotaService;
     
     @RequestMapping("/adoptar")
-    public String page(Model model) { 
+    public String adoptar(Model model) { 
         var listaMascotas = mascotaService.getMascotas(true);
         model.addAttribute("mascotas", listaMascotas);
         return "/adoptar/listado";
