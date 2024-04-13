@@ -102,3 +102,8 @@ ul{
   z-index: 2;
 }
 
+.columnaPerfil{
+    flex-direction: column !important;
+    
+}
+
