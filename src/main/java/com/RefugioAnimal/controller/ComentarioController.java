@@ -25,12 +25,6 @@ public class ComentarioController {
     }
     
     @GetMapping("/comentarios")
-    public String comentarios(Model model) {
-        model.addAttribute("attribute", "value");
-        return "/comentarios/comentariosListado";
-    }
-
-    @GetMapping("/comentariosListado")
     public String listado(Model model) {
         List<Comentario> lista = comentarioService.getComentarios(false);
         model.addAttribute("comentarios", lista);
@@ -44,7 +38,7 @@ public class ComentarioController {
     @PostMapping("/guardar")
     public String comentarioGuardar(Comentario comentario) {
         comentarioService.save(comentario);
-        return "/comentarios/comentariosListado";
+        return "redirect:/comentarios";
     }
 
 }
