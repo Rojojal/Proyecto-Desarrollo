@@ -8,37 +8,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
 @Service
 public class ComentarioServiceImpl implements ComentarioService {
 
     @Autowired
     private ComentarioDao comentarioDao;
 
+    @Override
     @Transactional(readOnly = true)
-    public Comentario getComentario(Long idComentario) {
-        return comentarioDao.findById(idComentario).orElse(null);
-    }
+    public List<Comentario> getComentarios(boolean activos) {
+        List<Comentario> lista = comentarioDao.findAll();
 
-    @Transactional
-    public Comentario save(Comentario comentario) {
-        return comentarioDao.save(comentario);
-    }
+        if (activos) {
+            lista.removeIf(c -> !c.isActivo());
+        }
 
-    @Transactional
-    public void delete(Comentario comentario) {
-        comentarioDao.delete(comentario);
-    }
-
-    @Transactional
-    public void deleteComentario(Long idComentario) {
-        comentarioDao.deleteById(idComentario);
+        return lista;
     }
 
     @Override
-    public List<Comentario> getComentarios(boolean activos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Transactional(readOnly = true)
+    public Comentario getComentario(Comentario comentario) {
+        return comentarioDao.findById(comentario.getIdComentario()).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void save(Comentario comentario) {
+        comentarioDao.save(comentario);
     }
 
 

@@ -5,7 +5,9 @@
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <section th:replace="comentarios/fragmentos :: comentarios"/>
+        <section th:replace="comentarios/fragmentos :: comentarios"></section>
+        <section th:replace="comentarios/fragmentos :: agregarComentario"></section>
+        <section th:replace="comentarios/fragmentos :: listadoComentarios"></section>
         <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>

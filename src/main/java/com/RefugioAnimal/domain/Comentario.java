@@ -1,11 +1,11 @@
 package com.RefugioAnimal.domain;
 
-
 import com.google.cloud.Timestamp;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "comentarios")
 public class Comentario implements Serializable {
@@ -16,16 +16,21 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_comentario")
     private Long idComentario;
-    private int  idUsuario;
     private String contenido;
-    private Timestamp fecha_creacion;
+    //private Timestamp fecha_creacion;
+    private boolean activo;
 
     public Comentario() {
     }
 
-    public Comentario(int idUsuario, String contenido, Timestamp fecha_creacion) {
-        this.idUsuario = idUsuario;
+    public Comentario(String contenido, boolean activo) {
         this.contenido = contenido;
-        this.fecha_creacion = fecha_creacion;
+        this.activo = activo;
     }
+    
+//        public Comentario(String contenido, Timestamp fecha_creacion) {
+//        this.contenido = contenido;
+//        this.fecha_creacion = fecha_creacion;
+//    }
+    
 }

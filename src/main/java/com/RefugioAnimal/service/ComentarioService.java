@@ -4,13 +4,11 @@ import com.RefugioAnimal.domain.Comentario;
 import java.util.List;
 
 public interface ComentarioService {
-   public List<Comentario> getComentarios(boolean activos);
 
-    public Comentario getComentario(Long idComentario);
+    public List<Comentario> getComentarios(boolean activos);
 
-    public Comentario save(Comentario comentario);
+    public Comentario getComentario(Comentario comentario);
 
-    public void delete(Comentario comentario);
+    public void save(Comentario comentario);
 
-    public void deleteComentario(Long idComentario);
 }
