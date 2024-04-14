@@ -17,11 +17,7 @@ public class CorreoServiceImpl implements CorreoService {
     private JavaMailSender mailSender;
 
     @Override
-      public void enviarCorreoHtml(
-              String para, 
-              String asunto, 
-              String contenidoHtml) 
-              throws MessagingException {
+      public void enviarCorreoHtml( String para, String asunto, String contenidoHtml) throws MessagingException {
           
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper 
