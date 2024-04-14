@@ -12,14 +12,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/comentarios")
+
 public class ComentarioController {
     
     @Autowired
     ComentarioService comentarioService;
     
-    @GetMapping("/comentarios")
+    @RequestMapping("/comentarios")
     public String comentario(Model model) {
+        model.addAttribute("attribute", "value");
+        return "/comentarios/comentariosListado";
+    }
+    
+    @GetMapping("/comentarios")
+    public String comentarios(Model model) {
         model.addAttribute("attribute", "value");
         return "/comentarios/comentariosListado";
     }
@@ -38,7 +44,7 @@ public class ComentarioController {
     @PostMapping("/guardar")
     public String comentarioGuardar(Comentario comentario) {
         comentarioService.save(comentario);
-        return "redirect:/comentarios/comentariosListado";
+        return "/comentarios/comentariosListado";
     }
 
 }
