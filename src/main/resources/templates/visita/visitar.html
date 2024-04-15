@@ -8,11 +8,11 @@
         <header th:replace="layout/plantilla :: header"></header>
 
         <div class style="padding-left: 130px; padding-top: 20px; padding-bottom: 20px; background-color: #dfccf3; color: #461b75;">
-            <h1>¡Visítanos!</h1>
+            <h1>[[#{visita.boton}]]</h1>
         </div>
 
         <div class="text-center mb-3">
-            <p style="font-family: sans-serif; color: black; font-size: 30px; padding-top: 30px">Mira nuestra casa</p>
+            <p style="font-family: sans-serif; color: black; font-size: 30px; padding-top: 30px">[[#{visita.titulo}]]</p>
         </div>
 
         <div class="contenedorPrincipal2" style="font-family: sans-serif; padding-left: 100px; padding-right: 100px;">
@@ -25,9 +25,9 @@
             </section>
             <section class="sec1index" style=" padding: 0px;">
                 <section class="rounded-corner" style="background-color: #ebecf1; padding: 30px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 50px">
-                    <p style="font-size: 25px; padding: 50px">¡Ven y únete a nosotros en nuestro refugio de amor y esperanza para animales necesitados! En nuestro refugio, cada visita se convierte en una oportunidad para cambiar vidas, tanto para los animales que esperan un hogar como para aquellos que buscan la alegría y la compañía de una mascota.</p>
+                    <p style="font-size: 25px; padding: 50px">[[#{visita.texto}]]</p>
                 </section>
-                <a href="/visita/listado" class="btn custom-btn-color" style="font-size: 25px;">¡Visítanos!</a>
+                <a href="/visita/listado" class="btn custom-btn-color" style="font-size: 25px;">[[#{visita.boton}]]</a>
             </section>
         </div>
 

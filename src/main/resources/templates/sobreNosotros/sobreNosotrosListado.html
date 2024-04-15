@@ -4,9 +4,9 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: header"></header>
-    <h1 class="tituloConctacto">Sobre Nosotros</h1>
+    <h1 class="tituloConctacto">[[#{plantilla.nosotros}]]</h1>
     <section th:replace="sobreNosotros/fragmentos :: sobreNosotros"></section>
-    
+
     <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>
