@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="row" style="padding: 20px">
                     <div class="col-md-8 offset-md-2">
-                        <form ethod="POST" th:action="@{/}" th:object="${usuario}" class="was-validated">
+                        <form ethod="POST" th:action="@{/enviarCorreo/enviar}" th:object="${usuario}" class="was-validated">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">[[#{usuario.nombre}]]</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" required>
