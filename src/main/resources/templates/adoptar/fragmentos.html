@@ -9,7 +9,7 @@
     <body>
         <section th:fragment="listadoMascotas" id="mascotas">
             <div class style="padding-left: 130px; padding-top: 20px; padding-bottom: 20px; background-color: #dfccf3; color: #461b75;">
-                <h1>Adoptar</h1>
+                <h1>[[#{mascota.adoptar}]]</h1>
             </div>
 
             <div class="container">
@@ -48,23 +48,23 @@
             <div id="ventanaFormulario" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Formulario para solicitud de adopción</h5>
+                        <div class="modal-header" style="background-color: #dfccf3; color: white;">
+                            <h5 class="modal-title">[[#{formulario.solicitud}]]</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form th:action="@{/guardarFormulario}" th:object="${formulario}"
                               method="POST" class="was-validated" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label for="idMascota" class="form-label">ID de la mascota</label>
+                                    <label for="idMascota" class="form-label">[[#{mascota.idMascota}]]</label>
                                     <input type="number" class="form-control" id="idMascota" name="idMascota" required="true">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+                                    <label for="nombreCompleto" class="form-label">[[#{formulario.nombreCompleto}]]</label>
                                     <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required="true">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="cedula" class="form-label">Cédula</label>
+                                    <label for="cedula" class="form-label">[[#{formulario.cedula}]]</label>
                                     <input type="text" class="form-control" id="cedula" name="cedula" required="true">
                                 </div>
                                 <div class="mb-3">
@@ -72,23 +72,23 @@
                                     <input type="email" class="form-control" id="email" name="email" required="true">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <label for="telefono" class="form-label">[[#{formulario.telefono}]]</label>
                                     <input type="text" class="form-control" id="telefono" name="telefono" required="true">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="motivoAdopcion" class="form-label">Motivo de Adopción</label>
+                                    <label for="motivoAdopcion" class="form-label">[[#{formulario.motivoAdopcion}]]</label>
                                     <textarea class="form-control" id="motivoAdopcion" name="motivoAdopcion" required="true"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="comentariosAdicionales" class="form-label">Comentarios Adicionales</label>
+                                    <label for="comentariosAdicionales" class="form-label">[[#{formulario.comentariosAdicionales}]]</label>
                                     <textarea class="form-control" id="comentariosAdicionales" name="comentariosAdicionales"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="activo">Activo</label>
+                                    <label for="activo">[[#{formulario.activo}]]</label>
                                     <input class="form-check-input" type="checkbox" name="activo" id="activo" required="true"/>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Enviar formulario</button>
+                                    <button type="submit" class="btn custom-btn-color">[[#{formulario.enviarFormulario}]]</button>
                                 </div>
                             </form>
                         </div>
