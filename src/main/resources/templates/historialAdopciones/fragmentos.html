@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/solicitud.css}" rel="stylesheet" type="text/css"/>
+        <title>Patitas Felices</title>
+    </head>
+    <body>
+        <section th:fragment="panel">
+            <h1 style="text-align: center; margin-top: 30px;">[[#{historial.titulo}]]</h1>
+            <p style="text-align: center">[[#{historial.texto}]]</p>
+        </section>
+
+
+
+        <!-- 3 Sección principal para mostrar la información de la entidad solicitud -->
+        <section th:fragment="historialAdopciones" id="historial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">   
+                                <h4>[[#{historial.listado}]]</h4>
+                            </div>
+                            <div th:if="${historial != null and !historial.empty}">
+                                <table class="table table-hover" style="background-color: #f5effb;">
+                                    <thead style="background-color: #461b75; color: white">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>[[#{solicitud.idSolicitud}]]</th>
+                                            <th>[[#{solicitud.idMascota}]]</th>
+                                            <th>[[#{solicitud.nombreCompleto}]]</th>
+                                            <th>[[#{solicitud.email}]]</th>
+                                            <th>[[#{solicitud.telefono}]]</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="index : ${#numbers.sequence(0, totalMascotas - 1)}" >
+                                            <td>[[${index + 1}]]</td>
+                                            <td>[[${historial[index].idSolicitud}]]</td>
+                                            <td>[[${historial[index].idMascota}]]</td>
+                                            <td>[[${historial[index].nombreCompleto}]]</td>
+                                            <td>[[${historial[index].email}]]</td>
+                                            <td>[[${historial[index].telefono}]]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${historial == null or historial.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center" style="background-color: #dfccf3; color: #461b75;">
+                            <div class="card-body">
+                                <h3>[[#{historial.total}]]</h3>
+                                <h4 class="fs-2"><i class="fas fa-paw"></i> [[${totalHistorial}]]</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -47,7 +47,7 @@
                                             <td>[[${solicitud.email}]]</td>
                                             <td>[[${solicitud.telefono}]]</td>
                                             <td>[[${solicitud.motivoAdopcion}]]</td>
-                                            <td>[[#{solicitud.comentariosAdicionales}]]</td>
+                                            <td>[[${solicitud.comentariosAdicionales}]]</td>
                                             <td th:text="${solicitud.activo} ? 'Activa' : 'Inactiva'"></td>
                                             <td>
                                                 <a th:href="@{/solicitudesAdopcion/eliminar/}+${solicitud.idSolicitud}+'?status=denegado'" class="btn custom-btn-color">
