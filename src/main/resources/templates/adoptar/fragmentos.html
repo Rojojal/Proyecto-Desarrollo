@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 30px;">[[${mascota.nombre}]]</h5>
                             <figure>
-                                <img th:src="@{${mascota.rutaImagen}}" height="400"/>
+                                <img class="arregloImagen" th:src="@{${mascota.rutaImagen}}" height="400"/>
                                 <figcaption>[[#{mascota.idMascota}]]: [[${mascota.idMascota}]]</figcaption>
                                 <figcaption>[[#{mascota.genero}]]: [[${mascota.genero}]]</figcaption>
                                 <figcaption>[[#{mascota.raza}]]: [[${mascota.raza}]]</figcaption>
@@ -53,7 +53,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form th:action="@{/guardarFormulario}" th:object="${formulario}"
+                            <form th:action="@{/solicitudesAdopcion/guardar}" th:object="${formulario}"
                               method="POST" class="was-validated" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="idMascota" class="form-label">[[#{mascota.idMascota}]]</label>

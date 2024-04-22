@@ -8,7 +8,8 @@ public interface MascotaService {
     public List<Mascota> getMascotas(boolean activos);
     
     public Mascota getMascota(Mascota mascota);
-    
+    public Mascota getMascota(Long idMascota);
+
     public void save(Mascota mascota);
     
     public void delete(Mascota mascota);

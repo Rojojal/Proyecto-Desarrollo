@@ -12,7 +12,7 @@
         <header th:replace="layout/plantilla :: header"></header>
 
         <div id="b" class="fondo">
-            
+
 
 
             <div class="imagen-form-wrapper">
@@ -21,8 +21,8 @@
                     <h1 class="mb-4">[[#{panel.titulo}]]</h1>
                     <h4 class="mb-4">[[#{panel.actividad}]]</h4>
                     <form class="botonesPanel">
-                        <button type="submit" class="btn custom-btn-color">[[#{panel.primerTexto}]]</button>
-                        <button type="submit" class="btn custom-btn-color">[[#{panel.tercerTexto}]]</button>
+                        <a th:href="@{/solicitudesAdopcion/listado}" class="btn custom-btn-color">[[#{panel.primerTexto}]]</a>
+                        <a th:href="@{/}" class="btn custom-btn-color">[[#{panel.tercerTexto}]]</a>
                         <a th:href="@{/mascota/listado}" class="btn custom-btn-color">[[#{panel.segundoTexto}]]</a>
                     </form>
                 </section>

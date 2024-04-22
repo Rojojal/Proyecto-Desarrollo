@@ -6,15 +6,15 @@ import lombok.Data;
 
 @Data
 @Entity 
-@Table(name="formulario")
-public class Formulario implements Serializable{
+@Table(name="solicitud")
+public class Solicitud implements Serializable{
     
     private static final long serialVersionUID = 1L; //
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_formulario")
-    private Long idFormulario;
+    @Column(name = "id_solicitud")
+    private Long idSolicitud;
     private int idMascota;
     private String nombreCompleto;
     private String cedula;
@@ -25,10 +25,10 @@ public class Formulario implements Serializable{
     private boolean activo;
     
     
-    public Formulario() {
+    public Solicitud() {
     }
 
-    public Formulario(int idMascota, String nombreCompleto, String cedula, String email, String telefono, String motivoAdopcion, String comentariosAdicionales, boolean activo) {
+    public Solicitud(int idMascota, String nombreCompleto, String cedula, String email, String telefono, String motivoAdopcion, String comentariosAdicionales, boolean activo) {
         this.idMascota = idMascota;
         this.nombreCompleto = nombreCompleto;
         this.cedula = cedula;
@@ -38,6 +38,8 @@ public class Formulario implements Serializable{
         this.comentariosAdicionales = comentariosAdicionales;
         this.activo = activo;
     }
+
+   
 
     
     

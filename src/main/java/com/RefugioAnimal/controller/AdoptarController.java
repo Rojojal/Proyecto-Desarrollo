@@ -1,13 +1,13 @@
 package com.RefugioAnimal.controller;
 
-import com.RefugioAnimal.domain.Formulario;
-import com.RefugioAnimal.service.FormularioService;
+import com.RefugioAnimal.domain.Solicitud;
 import com.RefugioAnimal.service.MascotaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.RefugioAnimal.service.SolicitudService;
 
 
 @Controller
@@ -17,7 +17,7 @@ public class AdoptarController {
     MascotaService mascotaService;
     
     @Autowired
-    FormularioService formularioService;
+    SolicitudService formularioService;
     
     @RequestMapping("/adoptar")
     public String adoptar(Model model) { 
@@ -27,7 +27,7 @@ public class AdoptarController {
     }
 
     @PostMapping("/guardarFormulario")
-    public String guardarFormulario(Formulario formulario) {
+    public String guardarFormulario(Solicitud formulario) {
         formularioService.save(formulario);
         return "redirect:/adoptar";
     }

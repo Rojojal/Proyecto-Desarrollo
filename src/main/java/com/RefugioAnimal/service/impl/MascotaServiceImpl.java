@@ -43,4 +43,9 @@ public class MascotaServiceImpl implements MascotaService{
     public void delete(Mascota mascota) {
         mascotaDao.delete(mascota);
     }
+
+    @Override
+    public Mascota getMascota(Long idMascota) {
+       return mascotaDao.findById(idMascota).orElse(null);
+    }
 }
