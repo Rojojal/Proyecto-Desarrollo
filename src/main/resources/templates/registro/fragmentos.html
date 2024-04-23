@@ -18,37 +18,40 @@
                         </div>
                     </section>
                 </div>
-            <div class="row py-2 justify-content-center">
-                <div class="col-md-3">
-                    <form method="POST" th:action="@{/registro/crearUsuario}" th:object="${usuario}" class="was-validated">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>[[#{usuario.agregar}]]</h4>
+                <div class="row py-2 justify-content-center">
+                    <div class="col-md-3">
+                        <form method="POST" th:action="@{/registro/crearUsuario}" th:object="${usuario}" class="was-validated">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>[[#{usuario.agregar}]]</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="username">[[#{usuario.username}]]</label>
+                                        <input type="text" class="form-control" name="username"  required="true"/></div>
+                                    <div class="mb-3">
+                                        <label for="nombre">[[#{usuario.nombre}]]</label>
+                                        <input type="text" class="form-control" name="nombre"  required="true"/></div>
+                                    <div class="mb-3">
+                                        <label for="apellidos">[[#{usuario.apellidos}]]</label>
+                                        <input type="text" class="form-control" name="apellidos"
+                                               required="true"/></div>
+                                    <div class="mb-3">
+                                        <label for="email">[[#{usuario.correo}]]</label>
+                                        <input type="email" class="form-control" 
+                                               name="correo" 
+                                               required="true"/></div></div>
+                                <div class="card-footer text-end">                                                
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-envelope"></i> [[#{usuario.crear}]]
+                                    </button></div>
                             </div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label for="username">[[#{usuario.username}]]</label>
-                                    <input type="text" class="form-control" name="username"  required="true"/></div>
-                                <div class="mb-3">
-                                    <label for="nombre">[[#{usuario.nombre}]]</label>
-                                    <input type="text" class="form-control" name="nombre"  required="true"/></div>
-                                <div class="mb-3">
-                                    <label for="apellidos">[[#{usuario.apellidos}]]</label>
-                                    <input type="text" class="form-control" name="apellidos"
-                                           required="true"/></div>
-                                <div class="mb-3">
-                                    <label for="email">[[#{usuario.correo}]]</label>
-                                    <input type="email" class="form-control" 
-                                           name="correo" 
-                                           required="true"/></div></div>
-                            <div class="card-footer text-end">                                                
-                                <button type="submit" class="btn btn-success">
-                                    <i class="fas fa-envelope"></i> [[#{usuario.crear}]]
-                                </button></div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="contenedorLogin">
+                        <img src="https://i.pinimg.com/736x/74/d8/91/74d891c14cc8b295a87cb3470c20023d.jpg" class ="imagen" alt="adoptame"/>  
+                    </div>
                 </div>
-            </div>
         </section>
 
         <!-- 2 Fragmento que se utiliza activar un usuario -->
@@ -93,6 +96,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="contenedorLogin">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_873361-MLM73029704048_112023-O.webp" class ="imagen" alt="adoptame"/>  
                 </div>
             </div>
         </section>

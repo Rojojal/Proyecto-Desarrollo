@@ -64,7 +64,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**",
                         "/sobreNosotros/**", "/visita/**", "/comentarios/**", "/contacto/**", "/ubicacion/**",
-                        "/registro/**", "/js/**", "/webjars/**", "/error**", "/css/**", "/adoptar/**","/guardar/**", "/enviarCorreo/**")
+                        "/registro/**", "/js/**", "/webjars/**", "/error**", "/css/**", "/adoptar/**","/solicitudesAdopcion/guardar", "/enviarCorreo/**")
                 .permitAll()
                 .requestMatchers(
                         "/administracion/accesoPersonalRefugio/**", "/mascota/fragmentos/**",
@@ -78,7 +78,9 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .requestMatchers(
                         "/producto/listado",
                         "/categoria/listado",
-                        "/usuario/listado"
+                        "/usuario/listado",
+                        "/adoptar/",
+                        "/adoptar/listado"
                 ).hasAnyRole("ADMIN", "PERSONAL")
                 .requestMatchers("/facturar/carrito")
                 .hasRole("USER")

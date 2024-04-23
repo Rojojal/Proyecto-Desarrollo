@@ -52,7 +52,7 @@ public class SolicitudesAdopcionController {
     @PostMapping("/guardar")
     public String solicitudGuardar(Solicitud solicitud) {        
         solicitudService.save(solicitud);
-        return "redirect:/solicitudesAdopcion/listado";
+        return "redirect:/adoptar";
     }
 
     @GetMapping("/eliminar/{idSolicitud}")
