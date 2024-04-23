@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
+        <link th:href="@{/css/pantallaPrincipal.css}" rel="stylesheet" type="text/css"/>
         <title>Patitas Felices</title>
     </head>
     <body>
@@ -12,7 +13,7 @@
                 <div class="col-md-3">
                     <section>
                         <div class="col-md-4 d-grid">
-                            <a th:href="@{/login}" class="btn btn-primary">
+                            <a th:href="@{/login}" class="btn custom-btn-color">
                                 <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
                             </a>
                         </div>
@@ -22,7 +23,7 @@
                     <div class="col-md-3">
                         <form method="POST" th:action="@{/registro/crearUsuario}" th:object="${usuario}" class="was-validated">
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header bg-success colorBoton">
                                     <h4>[[#{usuario.agregar}]]</h4>
                                 </div>
                                 <div class="card-body">
@@ -42,7 +43,7 @@
                                                name="correo" 
                                                required="true"/></div></div>
                                 <div class="card-footer text-end">                                                
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn custom-btn-color">
                                         <i class="fas fa-envelope"></i> [[#{usuario.crear}]]
                                     </button></div>
                             </div>
